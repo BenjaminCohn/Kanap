@@ -114,7 +114,7 @@ const popPanier = (name) => {
       ) {
       // récupération du local storage actuel
 
-      let storage = JSON.parse(localStorage.getItem("Kanapstorage"));
+      let basket = JSON.parse(localStorage.getItem("Kanapstorage"));
 
       //Crée un objet Json avec les informations de l'article ciblé
       let article = {
