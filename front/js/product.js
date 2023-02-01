@@ -82,5 +82,23 @@ for (let color of colors) {
 }
 }
 
+//modal d'avertissement pour utilisateur à l'ajout au panier et peux ainsi le rediriger vers la pages panier
+
+const popPanier = (name) => {
+    if (
+      window.confirm(
+        `Vous avez réservé ${document.getElementById("quantity").value} ${name} ${
+          document.getElementById("colors").value
+        } Pour consulter votre panier, cliquez sur OK`
+      )
+    ) {
+      window.location.href = "cart.html";
+    }
+  };
  
+  /**
+ * ajout ou update du panier (id et nom de l'article)
+ * @param { String } id
+ * @param { String } name
+ **/
 
