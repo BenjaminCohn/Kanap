@@ -26,3 +26,27 @@ function ajax(url, quantity, color) {
         console.log(err);
       });
   }
+
+  /**
+   * Récuperer les produit du panier
+   **/
+
+  function lecturePanier() {
+    // Récupration du localStorage (panier)
+    let basket = JSON.parse(localStorage.getItem("kanapBasket"));
+  
+    // pour ne pas récupérer plusieurs fois l'id de l'article séléctionner plusieurs fois
+    let idBasket = [];
+    for (let article of basket) {
+      if (!idBasket.includes(article.id)) {
+        idBasket.push(article);
+      }
+    }
+
+    //Le tableau contient les id en seul exemplaire de chaque produits
+    for (let article of idBasket) {
+      var url = "http://localhost:3000/api/products/" + article.id;
+      ajax(url, article.quantity, article.colors);
+    }
+  }
+  lecturePanier();

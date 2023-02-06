@@ -1,6 +1,6 @@
 // Récupèrer l'id transmis dans le liens pour effectuer une requête avec celui ci en paramètre
 var actualUrl = document.location.href;
-actualUrl = new URL(actualUrl);
+    actualUrl = new URL(actualUrl);
 var id = actualUrl.searchParams.get("id");
 
 const url = "http://localhost:3000/api/products/" + id; 
@@ -162,6 +162,6 @@ if (basket) {
 }
 
 // localStorage.clear();
-
+// 
   
 
