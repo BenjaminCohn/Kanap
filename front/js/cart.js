@@ -301,10 +301,10 @@ else {
                 // Récupération du prix de chaque produit que l'on met dans une variable priceProductPanier
                 priceProductPanier = compositionProduitsPanier.price;
 
-                //---------------On crée les éléments html manquants de la page cart.html, dans la <section id="cart__items">...--------------------
+                //---------------On cré les éléments html manquants de la page cart.html, dans la <section id="cart__items">...--------------------
                 //-----------------------------...et on y insère les infos du localstorage----------------------------------------------------------
                 
-                //Début Ajout Balises html
+                //_________________________________________Début Ajout Balises html_______________________________________________________________
                 //-------------------------Création de la balise article avec comme classe cart__item--------------------------------------------
                 let newArticle = document.createElement('article');
                 newArticle.setAttribute("class","cart__item");
@@ -384,14 +384,15 @@ else {
                                 newPDelete.innerText = "Supprimer";
                                 newDivContentSettingsDelete.appendChild(newPDelete);
                 
-                //Fin Ajout Balises html
+                //_____________________________________________Fin Ajout Balises html____________________________________________________________
   
                 //__Appel de la fonction pour calculer la qtité totale de produits & le prix total du panier, au chargement de la page Panier.html______
                 totaux();
             }//for
-            //Appel de la fonction Supprimer un produit
+            //___________________________________________Appel de la fonction Supprimer un produit__________________________________________________________
             deleteProduct();
-            //Appel de le fonction Modifier la quantité d'un produit
+            //_____________________________________Appel de le fonction Modifier la quantité d'un produit____________________________________________________
+            changeQuantity(); 
 
         }); //then   
 
@@ -404,7 +405,7 @@ else {
       else{
         
 
-        //Gestion du formulaire de contact et validation de la commande
+        //__________________________________________Gestion du formulaire de contact et validation de la commande________________________________________
         
         // On vérifie que tous les champs sont bien renseignés, sinon on indique un message à l'utilisateur
         // On vérifie qu'aucun champ n'est vide
@@ -459,7 +460,7 @@ else {
                 console.log("Erreur Fetch product.js", err);
                 alert ("Un problème a été rencontré lors de l'envoi du formulaire.");
             });
-            // vide le localStorage
+            //----------------------------------------------On vide le localStorage---------------------------------------------------------------
             localStorage.clear();
         }; //fin else
       }
